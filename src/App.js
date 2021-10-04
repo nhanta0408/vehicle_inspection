@@ -11,30 +11,34 @@ import {
 import HomeScreen from './screens/HomeScreen';
 import CaptureScreen from './screens/CaptureScreen';
 import CaptureReviewScreen from './screens/CaptureReviewScreen';
+import {Provider} from 'react-redux';
+import {Store} from './redux/store';
 const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator
-        initialRouteName="HomeScreen"
-        screenOptions={{
-          headerShown: false,
-          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
-        }}>
-        <Stack.Screen name="HomeScreen" component={HomeScreen} />
-        <Stack.Screen
-          name="CaptureScreen"
-          component={CaptureScreen}
-          initialParams={{number: 0}}
-        />
-        <Stack.Screen
-          name="CaptureReviewScreen"
-          component={CaptureReviewScreen}
-          initialParams={{imageUri: null}}
-        />
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Provider store={Store}>
+      <NavigationContainer>
+        <Stack.Navigator
+          initialRouteName="HomeScreen"
+          screenOptions={{
+            headerShown: false,
+            cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+          }}>
+          <Stack.Screen name="HomeScreen" component={HomeScreen} />
+          <Stack.Screen
+            name="CaptureScreen"
+            component={CaptureScreen}
+            initialParams={{number: 0}}
+          />
+          <Stack.Screen
+            name="CaptureReviewScreen"
+            component={CaptureReviewScreen}
+            initialParams={{imageUri: null}}
+          />
+        </Stack.Navigator>
+      </NavigationContainer>
+    </Provider>
   );
 };
 

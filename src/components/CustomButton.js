@@ -6,16 +6,24 @@ const CustomButton = ({
   borderColor = '#000000',
   backgroundColor = '#040899',
   text,
+  textColor = 'black',
   width = 200,
   height = 50,
   borderRadius = 15,
-  borderWidth = 2,
+  borderWidth = 0,
   iconLeftName = '',
   iconRightName = '',
   iconSize = 30,
   iconColor = 'black',
   onPress,
 }) => {
+  const styles = StyleSheet.create({
+    text: {
+      fontFamily: 'Nunito-Bold',
+      fontSize: 26 * ScreenRatio.ratioSquare,
+      color: textColor,
+    },
+  });
   return (
     <View
       style={[
@@ -63,11 +71,3 @@ const CustomButton = ({
 };
 
 export default CustomButton;
-
-const styles = StyleSheet.create({
-  text: {
-    fontFamily: 'Nunito-Bold',
-    fontSize: 26 * ScreenRatio.ratioSquare,
-    color: 'white',
-  },
-});

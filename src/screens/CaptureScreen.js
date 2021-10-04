@@ -46,6 +46,7 @@ const CaptureScreen = ({navigation, route}) => {
         <CameraUtilities
           navigation={navigation}
           onPressCapture={captureHandle}
+          number={route.params.number}
         />
       </RNCamera>
     </View>

@@ -1,11 +1,11 @@
 import React from 'react';
 
-import {Pressable, StyleSheet, Text, View} from 'react-native';
+import {Pressable, StyleSheet, Text, View, Image} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ScreenRatio from '../ScreenRatio';
 import CustomButton from './CustomButton';
 
-const CameraUtilities = ({navigation, onPressCapture}) => {
+const CameraUtilities = ({navigation, onPressCapture, number}) => {
   return (
     <View
       style={{
@@ -22,7 +22,17 @@ const CameraUtilities = ({navigation, onPressCapture}) => {
           />
         </Pressable>
       </View>
-      <View style={{flex: 18}}></View>
+      <View style={{flex: 18, alignItems: 'center', justifyContent: 'center'}}>
+        <Image
+          source={
+            number >= 3
+              ? require('../../assets/captureFrame.png')
+              : require('../../assets/captureFrameRect.png')
+          }
+          style={styles.guidelineImage}
+          resizeMode="contain"
+        />
+      </View>
       <View style={styles.footer}>
         <Pressable style={styles.buttonCapture} onPress={onPressCapture}>
           <View style={styles.insideCircle}></View>
@@ -63,6 +73,10 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
     borderWidth: 4 * ScreenRatio.ratioSquare,
     borderColor: '#bdbdbd',
+  },
+  guidelineImage: {
+    height: 300 * ScreenRatio.ratioSquare,
+    width: 300 * ScreenRatio.ratioSquare,
   },
 });
 

@@ -5,7 +5,12 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import ScreenRatio from '../ScreenRatio';
 import CustomButton from '../components/CustomButton';
 import RNFS from 'react-native-fs';
+import {useSelector, useDispatch} from 'react-redux';
+import {setIsFinishedArr} from '../redux/actions';
+
 const CaptureReviewScreen = ({navigation, route}) => {
+  const isFinished = useSelector(state => state.isFinishedReducer);
+  const dispatch = useDispatch();
   return (
     <ImageBackground
       source={{uri: route.params.imageUri}}
@@ -48,6 +53,7 @@ const CaptureReviewScreen = ({navigation, route}) => {
                       ' to ',
                       newFilePath,
                     ),
+                  dispatch(setIsFinishedArr(route.params.number)),
                   navigation.navigate('HomeScreen'),
                 )
                 .catch(error => {
