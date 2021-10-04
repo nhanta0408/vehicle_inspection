@@ -1,31 +1,70 @@
 import React from 'react';
 import {StyleSheet, Text, View, Image, Pressable} from 'react-native';
 import ScreenRatio from '../ScreenRatio';
-const CustomButton = ({borderColor, backgroundColor, text}) => {
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+const CustomButton = ({
+  borderColor = '#000000',
+  backgroundColor = '#040899',
+  text,
+  width = 200,
+  height = 50,
+  borderRadius = 15,
+  borderWidth = 2,
+  iconLeftName = '',
+  iconRightName = '',
+  iconSize = 30,
+  iconColor = 'black',
+  onPress,
+}) => {
   return (
-    <Pressable
+    <View
       style={[
         styles.customButton,
-        {borderColor: borderColor, backgroundColor: backgroundColor},
-      ]}
-      hitSlop={(10, 10, 10, 10)}>
-      <Text style={styles.text}>{text}</Text>
-    </Pressable>
+        {
+          borderColor: borderColor,
+          backgroundColor: backgroundColor,
+          width: width * ScreenRatio.ratioWidth,
+          height: height * ScreenRatio.ratioHeight,
+          borderRadius: borderRadius * ScreenRatio.ratioSquare,
+          borderWidth: borderWidth,
+          alignItems: 'center',
+          justifyContent: 'center',
+        },
+      ]}>
+      <Pressable
+        style={{
+          width: '100%',
+          height: '100%',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          flexDirection: 'row',
+        }}
+        hitSlop={(10, 10, 10, 10)}
+        android_ripple={{borderless: true, color: '#00000060'}}
+        onPress={onPress}>
+        {iconLeftName != '' ? (
+          <MaterialCommunityIcons
+            name={iconLeftName}
+            size={iconSize * ScreenRatio.ratioSquare}
+            color={iconColor}
+          />
+        ) : null}
+        <Text style={styles.text}>{text}</Text>
+        {iconRightName != '' ? (
+          <MaterialCommunityIcons
+            name={iconRightName}
+            size={iconSize * ScreenRatio.ratioSquare}
+            color={iconColor}
+          />
+        ) : null}
+      </Pressable>
+    </View>
   );
 };
 
 export default CustomButton;
 
 const styles = StyleSheet.create({
-  customButton: {
-    marginTop: 10 * ScreenRatio.ratioHeight,
-    width: 200 * ScreenRatio.ratioWidth,
-    height: 50 * ScreenRatio.ratioHeight,
-    borderRadius: 15 * ScreenRatio.ratioSquare,
-    borderWidth: 2,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
   text: {
     fontFamily: 'Nunito-Bold',
     fontSize: 26 * ScreenRatio.ratioSquare,

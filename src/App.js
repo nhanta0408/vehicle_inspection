@@ -1,25 +1,40 @@
 import React from 'react';
-import LinearGradient from 'react-native-linear-gradient';
 
 import {StyleSheet, Text, View} from 'react-native';
-import Appbar from './components/Appbar';
-import NameCard from './components/NameCard';
-import {Dimensions} from 'react-native';
-import VehicleCard from './components/VehicleCard';
-import InteractionArea from './components/InteractionArea';
+import {NavigationContainer} from '@react-navigation/native';
+import 'react-native-gesture-handler';
+import {
+  createStackNavigator,
+  CardStyleInterpolators,
+} from '@react-navigation/stack';
+
+import HomeScreen from './screens/HomeScreen';
+import CaptureScreen from './screens/CaptureScreen';
+import CaptureReviewScreen from './screens/CaptureReviewScreen';
+const Stack = createStackNavigator();
 
 const App = () => {
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <LinearGradient
-        colors={['#009FDF', '#62D0FF']}
-        style={styles.linearGradient}>
-        <Appbar />
-        <NameCard />
-        <VehicleCard />
-        <InteractionArea />
-      </LinearGradient>
-    </View>
+    <NavigationContainer>
+      <Stack.Navigator
+        initialRouteName="HomeScreen"
+        screenOptions={{
+          headerShown: false,
+          cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
+        }}>
+        <Stack.Screen name="HomeScreen" component={HomeScreen} />
+        <Stack.Screen
+          name="CaptureScreen"
+          component={CaptureScreen}
+          initialParams={{number: 0}}
+        />
+        <Stack.Screen
+          name="CaptureReviewScreen"
+          component={CaptureReviewScreen}
+          initialParams={{imageUri: null}}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
