@@ -20,6 +20,7 @@ const CaptureScreen = ({navigation, route}) => {
 
   const captureHandle = async () => {
     try {
+      console.log('Nhảy vào trước khi lưu ảnh data');
       const data = await takePicture();
       setImage(data);
       console.log(data.uri);
@@ -42,7 +43,8 @@ const CaptureScreen = ({navigation, route}) => {
       <RNCamera
         ref={cameraRef}
         type={RNCamera.Constants.Type.back}
-        style={styles.preview}>
+        style={styles.preview}
+        playSoundOnCapture={true}>
         <CameraUtilities
           navigation={navigation}
           onPressCapture={captureHandle}

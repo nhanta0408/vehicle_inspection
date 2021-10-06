@@ -7,9 +7,13 @@ import CustomButton from '../components/CustomButton';
 import RNFS from 'react-native-fs';
 import {useSelector, useDispatch} from 'react-redux';
 import {setIsFinishedArr} from '../redux/actions';
+import {AppColor} from '../value';
 
 const CaptureReviewScreen = ({navigation, route}) => {
-  const isFinished = useSelector(state => state.isFinishedReducer);
+  const isFinished = useSelector(
+    state => state.isFinishedReducer,
+  ).isFinishedArr;
+
   const dispatch = useDispatch();
   return (
     <ImageBackground
@@ -33,9 +37,10 @@ const CaptureReviewScreen = ({navigation, route}) => {
       <View style={styles.footer}>
         <CustomButton
           text="Accept"
-          backgroundColor="#009FDF"
+          backgroundColor={AppColor.secondaryColor}
+          textColor="white"
           borderWidth={0}
-          width={140}
+          width={160}
           iconRightName="check"
           iconColor="white"
           onPress={async () => {

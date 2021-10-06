@@ -55,7 +55,7 @@ const CircleButton = ({number, isFinished, onPressed}) => {
         {isFinished ? (
           <MaterialCommunityIcons
             name="check-circle"
-            size={43}
+            size={40 * ScreenRatio.ratioSquare}
             color="#64DD17"
           />
         ) : (

@@ -34,7 +34,10 @@ const CameraUtilities = ({navigation, onPressCapture, number}) => {
         />
       </View>
       <View style={styles.footer}>
-        <Pressable style={styles.buttonCapture} onPress={onPressCapture}>
+        <Pressable
+          style={styles.buttonCapture}
+          onPress={onPressCapture}
+          android_ripple={{borderless: true, color: '#000000FF'}}>
           <View style={styles.insideCircle}></View>
         </Pressable>
       </View>

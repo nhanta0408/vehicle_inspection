@@ -69,7 +69,8 @@ const PositionButton = ({
       ]}>
       <Pressable
         onPress={onPress}
-        android_ripple={{borderless: true, color: '#00000060'}}>
+        android_ripple={{borderless: true, color: '#00000060'}}
+        hitSlop={(10, 10, 10, 10)}>
         <Text style={styles.textPositionButton}>{title}</Text>
       </Pressable>
     </View>

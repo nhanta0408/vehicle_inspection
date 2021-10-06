@@ -26,19 +26,16 @@ const CustomButton = ({
   });
   return (
     <View
-      style={[
-        styles.customButton,
-        {
-          borderColor: borderColor,
-          backgroundColor: backgroundColor,
-          width: width * ScreenRatio.ratioWidth,
-          height: height * ScreenRatio.ratioHeight,
-          borderRadius: borderRadius * ScreenRatio.ratioSquare,
-          borderWidth: borderWidth,
-          alignItems: 'center',
-          justifyContent: 'center',
-        },
-      ]}>
+      style={{
+        borderColor: borderColor,
+        backgroundColor: backgroundColor,
+        width: width * ScreenRatio.ratioWidth,
+        height: height * ScreenRatio.ratioHeight,
+        borderRadius: borderRadius * ScreenRatio.ratioSquare,
+        borderWidth: borderWidth,
+        alignItems: 'center',
+        justifyContent: 'center',
+      }}>
       <Pressable
         style={{
           width: '100%',
