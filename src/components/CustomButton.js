@@ -15,6 +15,7 @@ const CustomButton = ({
   iconRightName = '',
   iconSize = 30,
   iconColor = 'black',
+  enableRipple = true,
   onPress,
 }) => {
   const styles = StyleSheet.create({
@@ -45,7 +46,9 @@ const CustomButton = ({
           flexDirection: 'row',
         }}
         hitSlop={(10, 10, 10, 10)}
-        android_ripple={{borderless: true, color: '#00000060'}}
+        android_ripple={
+          enableRipple ? {borderless: true, color: '#00000060'} : null
+        }
         onPress={onPress}>
         {iconLeftName != '' ? (
           <MaterialCommunityIcons

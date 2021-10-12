@@ -1,21 +1,39 @@
-export function uploadImage(file) {
-  // so uri, type, name are required properties
-  const formData = new FormData();
-  formData.append('image', file);
-  let headers = {
-    'Content-Type': 'multipart/form-data', // this is a imp line
+const SERVER_URL = 'http://192.168.1.8:3000';
+//const SERVER_URL = 'https://7990-115-76-156-37.ngrok.io';
+import React, {useState} from 'react';
+import {launchImageLibrary} from 'react-native-image-picker';
+
+export const uploadImage = file => {
+  const uriParts = file.uri.split('.');
+  const fileType = uriParts[uriParts.length - 1];
+  let body = new FormData();
+  for (let index = 1; index < 5; index++) {
+    let sourcePhoto = {
+      name: `MyTest${index}.jpg`,
+      type: 'image/jpg',
+      uri: `file:///storage/emulated/0/Android/data/com.vehicle_inspection/files/MyTest${index}.jpg`,
+    };
+    body.append('photo', sourcePhoto, sourcePhoto.uri);
+    console.log('Source photo', sourcePhoto); //log ra để kiểm tra name type uri
+  }
+  body.append('user', 'name'); //send json này để test xem đã pass được http chưa
+  let header = {
     Accept: 'application/json',
+    'Content-Type': 'multipart/form-data;',
   };
-  return fetch(`http://192.168.1.8:3000/upload`, {
-    // give something like https://xx.yy.zz/upload/whatever
+  fetch(`${SERVER_URL}/api/upload`, {
     method: 'POST',
-    headers: headers,
-    body: formData,
+    body: body,
+    header: {
+      Accept: 'application/json',
+      'Content-Type': 'multipart/form-data;',
+    },
   })
     .then(response => response.json())
-    .then(data => ({
-      uri: data.uri,
-      filename: data.filename,
-    }))
-    .catch(error => console.log('uploadImage error:', error));
-}
+    .then(response => {
+      console.log('response', response);
+    })
+    .catch(error => {
+      console.log('error', error);
+    });
+};

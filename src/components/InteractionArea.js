@@ -9,6 +9,7 @@ import {AppColor} from '../value';
 import {useSelector, useDispatch} from 'react-redux';
 import {clearIsFinishedArr} from '../redux/actions';
 import {uploadImage} from '../service/upload_image';
+import RNFS from 'react-native-fs';
 
 const InteractionArea = ({navigation}) => {
   //const [isFinished, setIsFinished] = useState([false, false, false, false]);
@@ -79,12 +80,15 @@ const InteractionArea = ({navigation}) => {
           textColor={
             checkIsAllFinished(isFinished) ? AppColor.primaryColor : 'white'
           }
+          enableRipple={checkIsAllFinished(isFinished)}
           onPress={() => {
-            uploadImage({
-              uri: '/storage/emulated/0/Android/data/com.vehicle_inspection/files/MyTest.jpg',
-              type: 'image/jpeg',
-              name: 'MyTest.jpg',
-            });
+            checkIsAllFinished(isFinished)
+              ? uploadImage({
+                  uri: 'file:///storage/emulated/0/Android/data/com.vehicle_inspection/files/MyTest1.jpg',
+                  type: 'image/jpg',
+                  fileName: 'MyTest1.jpg',
+                })
+              : () => {};
           }}
         />
         <View style={{height: 10}} />
