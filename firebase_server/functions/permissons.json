@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "fir-vinspect-rest-api",
+  "private_key_id": "6edc45bc756aba13ec054df9b9a05849a50905b5",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC0seZIDFBy4jSV\n4sf9Q3RiGNube9L5FQBpEQGp9Gd0sID3jAZbkWAxE4v76ZR7nw5h9TWB+Mmh/B8d\nDXmiWXuMrBD3BZa2upQRWNh5SX4Hw+9R15BOgNgh9j10MaPR5IzZxUAf585lPKyC\nc+V+CfTXDzoOAcEthuk9YrzJJ898N/QwrY3DX4TPNM7UCK8+YHgW5vAi1/qw1Plm\nwxD9Dzy7sJfP9NZVwdsXAuhfHn6D0dfgqNxGAojXBLzk9eUy5yYWRw/NbmDPyv7G\nlq1/d7gz5N2SrycsjdtXtCbZXYG3ejEWbw4hgP47kUapwbtaTCiUVztXcb/WTvEu\nwXEH1T4BAgMBAAECggEAA1RJyWcMrmkzjdVtWOG+ybXqie1YoEU+SjFJhg+ePlyo\nK6d1UIeXrZ/OEvilRzfRhIWHlFr4oBbsndTrOk4KxDdBYsPEGJ7Mbptj9awgedUm\n2iuuGXwvP0TxseveOFZNMA/90/ip6VyaUxb+kflt/O5nY+2tWQDk2EAy+UPWA1Re\nmOS2GYHRs1T89K6CBvKLqhdkcSNJAz9OHZcR2IxKorN/KeaKagSfLyzN424t6Ak8\nDQqIzcXlyDmTDaHXsmcvynWszctcohPKvAVNclruPx8DdWPZtPwMZsiGGZsdKpWk\nuVsLhHxqG/o+PMmJYiX3J3yO9+l8HO6SaNJ0g59QgQKBgQD1xuAPKNmlEt0ao5UM\nVI2zvGRtV6SxdkJuZEk+Y/3OyT+OPKzl/0jwmrKWfhoe4b5a3MMeWdEe7sU5pA+V\ntmpLx0SKKltWxT+tlvkSsjEw+0TBTKlvzH6lJSOn2hPAsqPyl9cg32FFx7hchnA7\nb5GTQZQQvmwboYXQfMJdlRoe8QKBgQC8NgHcsGCEONuDEsc6uIQWlW+ilq4c6YSU\nXDjbDaS8f2Yly1BaOTUi7EGthdbTjlRYLF93rsYgNVfw0WfHHOWLMtHqjzdp/OK0\nVu9yYX7LehSytr7HarYxQEE6zx3qou3sco7WWtZYb4hOTjEh2h5E4Fa71GTvEBGr\nDZzYSAwwEQKBgEFdsT2W6bujdradBwkOe9lvo24JPz4La8OcXHaBdYFHuOWFcZ6B\n9M449oJb62qHM29LA4HQ9XM6oa2g2pxAtaiNyMbOWRiMwVDTtE6qobabPUADuZSI\nWK5nYEJGF7bKTBw7EfYmMuKyKXBCORs1owv9BvolCu+WV9aJN9BX1WihAoGAQTF/\n8Z7Sv9omB0AA7NEvR9dZhPsmsnMc7nsHYrFWJ8kFbAACBE6enksx8NZUdJFvm986\n7m0Gye9QV+VhSjIzPMVMuzACpN7o9EjMxlUJI5hVBRaR/Od01piIP8OwfC8VtPp1\nicCLULTJhT5GfJBePcNrp8JJeBmb1SFw++Xw+tECgYEA1pT10EsTEU+ZEoPDEcEN\nplqmz7TRpBpqRgvLuP4LRBfK2n0HD4GxenG9xBzTv7IagsORJt7njNt5fcGaFUtK\nHnMEAO8H26lfGKBsFNoEd09lVVrLhEEgQwyeqVwgG5OXWxpW7JINej5eshHoMEhu\nIA3c02FUgjASNTZ/LahBURI=\n-----END PRIVATE KEY-----\n",
+  "client_email": "firebase-adminsdk-9dato@fir-vinspect-rest-api.iam.gserviceaccount.com",
+  "client_id": "111311349469931496707",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-9dato%40fir-vinspect-rest-api.iam.gserviceaccount.com"
+}

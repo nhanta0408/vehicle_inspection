@@ -10,6 +10,7 @@ import {useSelector, useDispatch} from 'react-redux';
 import {clearIsFinishedArr} from '../redux/actions';
 import {uploadImage} from '../service/upload_image';
 import RNFS from 'react-native-fs';
+import {uploadImageFirebase} from '../service/upload_image_firebase';
 
 const InteractionArea = ({navigation}) => {
   //const [isFinished, setIsFinished] = useState([false, false, false, false]);
@@ -82,13 +83,7 @@ const InteractionArea = ({navigation}) => {
           }
           enableRipple={checkIsAllFinished(isFinished)}
           onPress={() => {
-            checkIsAllFinished(isFinished)
-              ? uploadImage({
-                  uri: 'file:///storage/emulated/0/Android/data/com.vehicle_inspection/files/MyTest1.jpg',
-                  type: 'image/jpg',
-                  fileName: 'MyTest1.jpg',
-                })
-              : () => {};
+            checkIsAllFinished(isFinished) ? uploadImage() : null;
           }}
         />
         <View style={{height: 10}} />
