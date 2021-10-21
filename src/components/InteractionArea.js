@@ -82,13 +82,7 @@ const InteractionArea = ({navigation}) => {
           }
           enableRipple={checkIsAllFinished(isFinished)}
           onPress={() => {
-            checkIsAllFinished(isFinished)
-              ? uploadImage({
-                  uri: 'file:///storage/emulated/0/Android/data/com.vehicle_inspection/files/MyTest1.jpg',
-                  type: 'image/jpg',
-                  fileName: 'MyTest1.jpg',
-                })
-              : () => {};
+            checkIsAllFinished(isFinished) ? uploadImage() : null;
           }}
         />
         <View style={{height: 10}} />

@@ -1,11 +1,9 @@
-const SERVER_URL = 'http://192.168.1.8:3000';
+const SERVER_URL = 'http://192.168.1.8:3001';
 //const SERVER_URL = 'https://7990-115-76-156-37.ngrok.io';
 import React, {useState} from 'react';
 import {launchImageLibrary} from 'react-native-image-picker';
 
 export const uploadImage = file => {
-  const uriParts = file.uri.split('.');
-  const fileType = uriParts[uriParts.length - 1];
   let body = new FormData();
   for (let index = 1; index < 5; index++) {
     let sourcePhoto = {
@@ -21,7 +19,7 @@ export const uploadImage = file => {
     Accept: 'application/json',
     'Content-Type': 'multipart/form-data;',
   };
-  fetch(`${SERVER_URL}/api/upload`, {
+  fetch(`${SERVER_URL}/upload`, {
     method: 'POST',
     body: body,
     header: {

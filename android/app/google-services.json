@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "590644445522",
+    "project_id": "fir-storage-server",
+    "storage_bucket": "fir-storage-server.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:590644445522:android:8e4abf6190eefb0914fa8b",
+        "android_client_info": {
+          "package_name": "com.vehicle_inspection"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "590644445522-bb6ek7ajtpal47jhvpauchonng35m3tn.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vehicle_inspection",
+            "certificate_hash": "ea20e64dcc5b5bbeef77aa6b775ed6c6f6789924"
+          }
+        },
+        {
+          "client_id": "590644445522-umh24ajv19bu2ujkg17sq3vm6r96n0gq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3gboN4zQXhwA7Wrg3JJUQJUtQfr5shX0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "590644445522-umh24ajv19bu2ujkg17sq3vm6r96n0gq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
