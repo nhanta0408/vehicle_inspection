@@ -7,7 +7,7 @@ import IllustrationView from './IllustrationView';
 import {createStackNavigator} from '@react-navigation/stack';
 import {AppColor} from '../value';
 import {useSelector, useDispatch} from 'react-redux';
-import {clearIsFinishedArr} from '../redux/actions';
+import {clearIsFinishedArr} from '../redux/finishedReducers/isFinishedActions';
 import {uploadImage} from '../service/upload_image';
 import RNFS from 'react-native-fs';
 import {uploadImageFirebase} from '../service/upload_image_firebase';

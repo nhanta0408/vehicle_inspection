@@ -6,7 +6,7 @@ import ScreenRatio from '../ScreenRatio';
 import CustomButton from '../components/CustomButton';
 import RNFS from 'react-native-fs';
 import {useSelector, useDispatch} from 'react-redux';
-import {setIsFinishedArr} from '../redux/actions';
+import {setIsFinishedArr} from '../redux/finishedReducers/isFinishedActions';
 import {AppColor} from '../value';
 
 const CaptureReviewScreen = ({navigation, route}) => {

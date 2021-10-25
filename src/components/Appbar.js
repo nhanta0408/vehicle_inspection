@@ -19,9 +19,10 @@ const styles = StyleSheet.create({
     backgroundColor: '#00000000', //transparent
     paddingLeft: 25 * ScreenRatio.ratioWidth,
     paddingRight: 15 * ScreenRatio.ratioWidth,
-    paddingVertical: 15 * ScreenRatio.ratioHeight,
+    paddingVertical: 10 * ScreenRatio.ratioHeight,
     flexDirection: 'row',
     justifyContent: 'space-between',
+    alignItems: 'center',
   },
   text: {
     fontSize: 25,

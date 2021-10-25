@@ -1,5 +1,5 @@
-import {SET_IS_FINISHED_ARR} from './actions';
-import {CLEAR_IS_FINISHED_ARR} from './actions';
+import {SET_IS_FINISHED_ARR} from './isFinishedActions';
+import {CLEAR_IS_FINISHED_ARR} from './isFinishedActions';
 
 const initialState = {
   isFinishedArr: [false, false, false, false],

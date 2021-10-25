@@ -1,12 +1,14 @@
 import React, {useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
 import Appbar from '../components/Appbar';
 import NameCard from '../components/NameCard';
 import {Dimensions} from 'react-native';
 import VehicleCard from '../components/VehicleCard';
 import InteractionArea from '../components/InteractionArea';
+import ResultArea from '../components/ResultArea';
+import LoadingArea from '../components/LoadingArea';
 
 const HomeScreen = ({navigation, route}) => {
   return (
@@ -18,6 +20,8 @@ const HomeScreen = ({navigation, route}) => {
         <NameCard />
         <VehicleCard />
         <InteractionArea navigation={navigation} />
+        {/* <ResultArea /> */}
+        {/* <LoadingArea /> */}
       </LinearGradient>
     </View>
   );

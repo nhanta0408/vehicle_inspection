@@ -13,11 +13,18 @@ import CaptureScreen from './screens/CaptureScreen';
 import CaptureReviewScreen from './screens/CaptureReviewScreen';
 import {Provider} from 'react-redux';
 import {Store} from './redux/store';
+import {StatusBar} from 'react-native';
+import ScreenRatio from './ScreenRatio';
+
 const Stack = createStackNavigator();
 
 const App = () => {
+  console.log(ScreenRatio.ratioHeight);
+  console.log(ScreenRatio.ratioWidth);
+
   return (
     <Provider store={Store}>
+      <StatusBar hidden />
       <NavigationContainer>
         <Stack.Navigator
           initialRouteName="HomeScreen"
