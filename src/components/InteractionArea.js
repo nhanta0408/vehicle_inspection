@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {AppColor} from '../value';
 import {useSelector, useDispatch} from 'react-redux';
 import {clearIsFinishedArr} from '../redux/finishedReducers/isFinishedActions';
+import {inspect_request} from '../redux/inspectReducers/inspectActions';
 import {uploadImage} from '../service/upload_image';
 import RNFS from 'react-native-fs';
 import {uploadImageFirebase} from '../service/upload_image_firebase';
@@ -17,7 +18,6 @@ const InteractionArea = ({navigation}) => {
   const isFinished = useSelector(
     state => state.isFinishedReducer,
   ).isFinishedArr;
-
   const dispatch = useDispatch();
 
   const checkIsAllFinished = isFinished => {
@@ -76,19 +76,21 @@ const InteractionArea = ({navigation}) => {
         <View style={{height: 10}} />
 
         <CustomButton
-          text="Inspect"
+          text="INSPECT"
           backgroundColor={checkIsAllFinished(isFinished) ? 'white' : 'gray'}
           textColor={
             checkIsAllFinished(isFinished) ? AppColor.primaryColor : 'white'
           }
           enableRipple={checkIsAllFinished(isFinished)}
           onPress={() => {
-            checkIsAllFinished(isFinished) ? uploadImageFirebase() : null;
+            // checkIsAllFinished(isFinished) ? uploadImageFirebase() : null;
+            console.log('Nhấn nút');
+            dispatch(inspect_request());
           }}
         />
         <View style={{height: 10}} />
         <CustomButton
-          text="Clear"
+          text="CLEAR"
           backgroundColor="#0000000"
           borderWidth={2}
           borderColor="white"

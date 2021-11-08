@@ -4,11 +4,14 @@ import ScreenRatio from '../ScreenRatio';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
-const ResultRow = ({text = '1. Input content here', isSuccesful = false}) => {
+const ResultRow = ({
+  text = '1. Input content here',
+  isSuccesful: isSuccessful = false,
+}) => {
   return (
     <View style={styles.resultRowView}>
       <Text style={styles.text}>{text}</Text>
-      {isSuccesful ? (
+      {isSuccessful ? (
         <MaterialCommunityIcons
           name="check-circle"
           size={24 * ScreenRatio.ratioSquare}

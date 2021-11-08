@@ -9,8 +9,11 @@ import VehicleCard from '../components/VehicleCard';
 import InteractionArea from '../components/InteractionArea';
 import ResultArea from '../components/ResultArea';
 import LoadingArea from '../components/LoadingArea';
+import {useSelector, useDispatch} from 'react-redux';
 
 const HomeScreen = ({navigation, route}) => {
+  const resultInspect = useSelector(state => state.inspectReducer);
+
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <LinearGradient
@@ -19,9 +22,14 @@ const HomeScreen = ({navigation, route}) => {
         <Appbar />
         <NameCard />
         <VehicleCard />
-        <InteractionArea navigation={navigation} />
-        {/* <ResultArea /> */}
-        {/* <LoadingArea /> */}
+        {/* <InteractionArea navigation={navigation} /> */}
+        {resultInspect.stateType == 'Idle' ? (
+          <InteractionArea navigation={navigation} />
+        ) : resultInspect.stateType == 'Loading' ? (
+          <LoadingArea />
+        ) : (
+          <ResultArea isSuccessfullArr={resultInspect.resultArr} />
+        )}
       </LinearGradient>
     </View>
   );
