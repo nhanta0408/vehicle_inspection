@@ -1,60 +1,32 @@
- require_relative '../node_modules/react-native/scripts/react_native_pods'
- require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
+require_relative '../node_modules/react-native/scripts/react_native_pods'
+require_relative '../node_modules/@react-native-community/cli-platform-ios/native_modules'
 
- platform :ios, '11.0'
-
-# target 'vehicle_inspection' do
-#   config = use_native_modules!
-
-#   use_react_native!(
-#     :path => config[:reactNativePath],
-#     # to enable hermes on iOS, change `false` to `true` and then install pods
-#     :hermes_enabled => false
-#   )
-
-#   target 'vehicle_inspectionTests' do
-#     inherit! :complete
-#     # Pods for testing
-#   end
-
-#   # Enables Flipper.
-#   #
-#   # Note that if you have use_frameworks! enabled, Flipper will not work and
-#   # you should disable the next line.
-#   use_flipper!()
-
-#   post_install do |installer|
-#     react_native_post_install(installer)
-#   end
-# end
-
-
+platform :ios, '11.0'
 
 target 'vehicle_inspection' do
-  # See http://facebook.github.io/react-native/docs/integration-with-existing-apps.html#configuring-cocoapods-dependencies
-  pod 'React', :path => '../node_modules/react-native', :subspecs => [
-    'Core',
-    'CxxBridge', # Include this for RN >= 0.47
-    'DevSupport', # Include this to enable In-App Devmenu if RN >= 0.43
-    'RCTText',
-    'RCTNetwork',
-    'RCTWebSocket', # Needed for debugging
-    'RCTAnimation', # Needed for FlatList and animations running on native UI thread
-    # Add any other subspecs you want to use in your project
-  ]
+  config = use_native_modules!
 
-  # Explicitly include Yoga if you are using RN >= 0.42.0
-  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
+  use_react_native!(
+    :path => config[:reactNativePath],
+    # to enable hermes on iOS, change `false` to `true` and then install pods
+    :hermes_enabled => false
+  )
 
-  # Third party deps podspec link
-  pod 'react-native-camera', path: '../node_modules/react-native-camera'
+  target 'vehicle_inspectionTests' do
+    inherit! :complete
+    # Pods for testing
+  end
 
-end
+  # Enables Flipper.
+  #
+  # Note that if you have use_frameworks! enabled, Flipper will not work and
+  # you should disable the next line.
+  use_flipper!()
 
-post_install do |installer|
-  installer.pods_project.targets.each do |target|
-    if target.name == "React"
-      target.remove_from_project
-    end
+  post_install do |installer|
+    react_native_post_install(installer)
   end
 end
+
+
+
