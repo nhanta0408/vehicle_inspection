@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {Pressable, StyleSheet, Text, View, ImageBackground} from 'react-native';
+import {Platform, Pressable, StyleSheet, Text, View, ImageBackground} from 'react-native';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import ScreenRatio from '../ScreenRatio';
 import CustomButton from '../components/CustomButton';
@@ -46,7 +46,7 @@ const CaptureReviewScreen = ({navigation, route}) => {
           onPress={async () => {
             try {
               const filePath = route.params.imageUri;
-              const newFilePath =
+              const newFilePath = Platform.OS==='ios'?RNFS.MainBundlePath+`/MyTest${route.params.number}.jpg`:
                 RNFS.ExternalDirectoryPath +
                 `/MyTest${route.params.number}.jpg`;
               RNFS.moveFile(filePath, newFilePath)

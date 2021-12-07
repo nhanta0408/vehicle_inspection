@@ -6,7 +6,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 const ResultRow = ({
   text = '1. Input content here',
-  isSuccesful: isSuccessful = false,
+  isSuccessful = false,
 }) => {
   return (
     <View style={styles.resultRowView}>

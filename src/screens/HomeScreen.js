@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 
-import {StyleSheet, Text, View, ActivityIndicator} from 'react-native';
+import {StyleSheet, Text, View, ActivityIndicator, SafeAreaView} from 'react-native';
 import Appbar from '../components/Appbar';
 import NameCard from '../components/NameCard';
 import {Dimensions} from 'react-native';
